@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubi9-clean-ssh-deployment
+  labels:
+    app: ubi9
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ubi9
+  template:
+    metadata:
+      labels:
+        app: ubi9
+    spec:
+      containers:
+      - name: ubi9-clean-ssh
+        image: alikyi/ubi9customs:ubi9-clean-ssh
+        ports:
+        - containerPort: 80
+        - containerPort: 22
+        securityContext:
+          privileged: true
+      nodeSelector:
+        nodetype: worker
+  # These containers are run during pod initialization
+      dnsPolicy: Default
+      tolerations:
+      - key: ""
+        operator: "Exists"
+        effect: "NoSchedule"
