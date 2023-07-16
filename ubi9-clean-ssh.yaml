@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubi9-demo
+spec:
+  containers:
+  - name: ubi9-clean-ssh
+    image: alikyi/ubi9customs:ubi9-clean-ssh
+    ports:
+    - containerPort: 80
+    - containerPort: 22
+    securityContext:
+      privileged: true
+  # These containers are run during pod initialization
+  dnsPolicy: Default
+  tolerations:
+  - key: ""
+    operator: "Exists"
+    effect: "NoSchedule"
