@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "name": "busybox"
+  },
+  "image":{
+    "image": "busybox"
+  },
+  "command": [
+    "bash"
+  ],
+  "log_path":"busybox.log",
+  "linux": {
+  }
+}
