@@ -1,0 +1,9 @@
+[Cdrom_AppStream]
+name=cdrom_AppStream
+baseurl=http://10.0.2.4/AppStream
+gpgcheck=0
+
+[Cdrom_BaseOS]
+name=cdrom_BaseOS
+baseurl=http://10.0.2.4/BaseOS
+gpgcheck=0

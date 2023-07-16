@@ -1,0 +1,5 @@
+podman build -t ubi9kub -v /mnt/cdrom/:/mnt .
+
+find /mnt/cdrom -name "*podman*x86_64.rpm" -printf '%f\n' -exec dnf install --assumeno '{}' \;
+
+kubeadm join 10.0.2.4:6443 --token 3uajtc.vqmxek9x1py488q4 --discovery-token-ca-cert-hash sha256:53bf72b320ff8b6921ddc0d7e5df0ce3d0cac4a3793c92869115c6dd4a82f73e

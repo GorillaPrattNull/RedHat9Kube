@@ -1,0 +1,8 @@
+.:
+cni-plugins-linux-amd64-v1.3.0.tgz
+containerd-1.7.1-linux-amd64.tar.gz
+crictl-1.27.0-linux-amd64.tar.gz
+kubeadm
+kubectl
+kubelet
+notes
